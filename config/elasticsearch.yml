@@ -1,50 +1,18 @@
-cluster:
-  name: ${CLUSTER_NAME}
-
-node:
-  master: ${NODE_MASTER}
-  name: master-a
-  data: ${NODE_DATA}
-  ingest: ${NODE_INGEST}
-  max_local_storage_nodes: ${MAX_LOCAL_STORAGE_NODES}
-
-processors: ${PROCESSORS:1}
-
-network.host: ${NETWORK_HOST}
-
-path:
-  data: /data/data
-  logs: /data/log
-  repo: ${REPO_LOCATIONS}
-
-bootstrap:
-  memory_lock: ${MEMORY_LOCK}
-
-transport:
-  host: ${TRANSPORT_HOST}
-
-http:
-  compression: true
-  cors:
-    enabled: ${HTTP_CORS_ENABLE}
-    allow-origin: ${HTTP_CORS_ALLOW_ORIGIN}
-
-discovery:
-  zen:
-    minimum_master_nodes: ${NUMBER_OF_MASTERS}
-
-discovery.zen.ping.unicast.hosts: ${CLUSTER_NAME}
-
-xpack.ml.enabled: false
-
-node.name: master-a
-
-discovery.seed_hosts:
-  - master-a
-  - master-b
-  - master-c
-
-cluster.initial_master_nodes:
-  - master-a
-  - master-b
-  - master-c
+cluster.name: escluster_dev
+node.name: ${HOSTNAME}
+node.master: true
+node.data: true
+node.ingest: true
+node.max_local_storage_nodes: 1
+path.data: /data/data
+path.logs: /data/log
+network.host: site
+network.bind_host: 0.0.0.0
+transport.tcp.port: 9300
+http.port: 9200
+discovery.zen.minimum_master_nodes: 2
+discovery.zen.ping_timeout: 5s
+discovery.seed_hosts: ["pool-zwopdtq6j-xfeb", "pool-zwopdtq6j-xfej", "pool-zwopdtq6j-xfer"]
+cluster.initial_master_nodes: ["pool-zwopdtq6j-xfeb", "pool-zwopdtq6j-xfej", "pool-zwopdtq6j-xfer"]
+logger.org.elasticsearch.cluster.coordination.ClusterBootstrapService: TRACE
+logger.org.elasticsearch.discovery: TRACE
