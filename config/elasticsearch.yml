@@ -3,7 +3,7 @@ cluster:
 
 node:
   master: ${NODE_MASTER}
-  name: ${NODE_NAME}
+  name: master-a
   data: ${NODE_DATA}
   ingest: ${NODE_INGEST}
   max_local_storage_nodes: ${MAX_LOCAL_STORAGE_NODES}
