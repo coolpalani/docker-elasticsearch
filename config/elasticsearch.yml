@@ -34,3 +34,8 @@ discovery:
     minimum_master_nodes: ${NUMBER_OF_MASTERS}
 
 xpack.ml.enabled: false
+
+cluster.initial_master_nodes:
+  - master-a
+  - master-b
+  - master-c
