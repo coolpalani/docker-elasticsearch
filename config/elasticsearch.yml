@@ -35,6 +35,8 @@ discovery:
 
 xpack.ml.enabled: false
 
+node.name=master-a
+
 cluster.initial_master_nodes:
   - master-a
   - master-b
