@@ -39,8 +39,12 @@ xpack.ml.enabled: false
 
 node.name: master-a
 
+discovery.seed_hosts:
+  - master-a
+  - master-b
+  - master-c
+
 cluster.initial_master_nodes:
   - master-a
   - master-b
   - master-c
-  - 172.17.0.2
