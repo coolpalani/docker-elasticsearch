@@ -6,13 +6,13 @@ node.ingest: true
 node.max_local_storage_nodes: 1
 path.data: /data/data
 path.logs: /data/log
-network.host: site
+network.host: 0.0.0.0
 network.bind_host: 0.0.0.0
 transport.tcp.port: 9300
 http.port: 9200
 discovery.zen.minimum_master_nodes: 2
 discovery.zen.ping_timeout: 5s
-discovery.seed_hosts: ["pool-zwopdtq6j-xfeb", "pool-zwopdtq6j-xfej", "pool-zwopdtq6j-xfer"]
-cluster.initial_master_nodes: ["pool-zwopdtq6j-xfeb", "pool-zwopdtq6j-xfej", "pool-zwopdtq6j-xfer"]
+discovery.seed_hosts: ["esnode-0", "esnode-1", "esnode-2"]
+cluster.initial_master_nodes: ["esnode-0", "esnode-1", "esnode-2"]
 logger.org.elasticsearch.cluster.coordination.ClusterBootstrapService: TRACE
 logger.org.elasticsearch.discovery: TRACE
