@@ -24,6 +24,7 @@ transport:
   host: ${TRANSPORT_HOST}
 
 http:
+  enabled: ${HTTP_ENABLE}
   compression: true
   cors:
     enabled: ${HTTP_CORS_ENABLE}
